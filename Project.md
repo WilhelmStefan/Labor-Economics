@@ -21,5 +21,6 @@ Following the approach of Meyer and Rosenbaum this project investigates the effe
 In 1996 the welfare program investigated by the authors of the original paper was replaced by a welfare program called TANF. Under TANF every state can freely choose the qualification criteria and amount of the welfare benfits. TANF is only granted consecutively for 2 years if the recipient does not work more than 30 hours a week. The lifetime limit for TANF benefits is set to 5 years. Moreover, also childless single women are eligible for TANF. It is striking that the TANF benefits in most states have not been adjusted during the observation time. This leads to a decrease in the average benefit when accounting for inflation.
 
 **Average TANF Benfits (Inflation adjusted):**
+
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/TANF%20Benefits.png "TANF Benefits")
 
