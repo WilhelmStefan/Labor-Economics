@@ -14,3 +14,8 @@ As mentioned before the authors used a difference-in-difference approach stating
 The employment rate of single mothers increased by 6-9% between 1984 and 1996 in comparison to the employment rate of childless single women. The probit regression revealed that the reduction in income taxes had a significant positve effect on the employment rate of single mothers as well as the welfare reform. A higher income tax credit increases the probability of a single mother beeing employed whereas higher welfare benefits decrease the probability. The authors also state that especially the change in the tax credit and the level of the maximum welfare benefit drive the results.
 ### Further literature
 The findings of Meyer and Rosenbaum are consistent with other research. For example Ellwood (2000) or Jaumotte (2003) provide similar results for the US and other OECD members.
+
+## Own Research
+### Context
+In 1996 the welfare program investigated by the authors of the original paper was replaced by a welfare program called TANF. Under TANF every state can freely choose the qualification criteria and amount of the welfare benfits. TANF is only granted consecutively for 2 years if the recipient does not work more than 30 hours a week. The lifetime limit for TANF benefits is set to 5 years. Moreover, also childless single women are eligible for TANF.
+
