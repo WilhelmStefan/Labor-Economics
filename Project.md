@@ -74,6 +74,7 @@ Using stata delivers the shown bar diagrams:
 ```stata
 graph bar empsingle empmother, over(year)
 ```
+![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Besch%C3%A4ftigung.png "Beschäftigung")
 
 
 
