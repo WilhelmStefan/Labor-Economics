@@ -82,14 +82,18 @@ Employment of black mothers:
 graph bar empsingle empmother if race==200, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Afroamericans.png "Afroamericans")
+
 Employment of unskilled monthers (no high school degree):
 ```stata
 graph bar empsingle empmother if educ<73, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Geringqualifiziert.png "Geringqualifiziert")
+
 Employment of monthers with children under 6 years:
 ```stata
 graph bar empsingle empmother if yngch<6, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Kleinkind.png "Kleinkind")
 
+### Results
+The graphical analysis provides some evidence for the first hypothesis of a  
