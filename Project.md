@@ -59,7 +59,7 @@ Based on the previous oberservations the following hypotheses are put up:
 ### Graphical analysis
 In order to confirm or reject the hypotheses a graphical analysis is conducted first. I created the variable emp(employed) which equals one if the observed women has been working positve hours last week. Moreover, the same variable is created for the subgroups of childless single women (empsingle) and single mothers (empmother). 
 ```stata
-recode ahrsworkt (999=0) (else=1),gen(emp)
+recode ahrsworkt (999=0) (else=1), gen(emp)
 ```
 ```stata
 gen empsingle=.
@@ -96,4 +96,21 @@ graph bar empsingle empmother if yngch<6, over(year)
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Kleinkind.png "Kleinkind")
 
 ### Results
-The graphical analysis provides some evidence for the first hypothesis of a  
+The graphical analysis provides some evidence for the first hypothesis of a common trend for childless single women and single mothers. The trend is observable through all subgroups of single mothers. Nevertheless, the second hypothesis that the decreasing will raise employment cannot be confirmed by the graphical analysis. That is why in the next step a Probit-Regression is conducted to quantify the effects of the declining benefits on employment.
+
+### Probit Regression
+Next to the benefit variable the Probit-Regression includes variables to controll for state and year specific effects. Further, the variables ethnie (1 = black, 0 = not black), bildung (0 = no high school diploma, 1 = high school diploma, 2 = college diploma) and kleinkind(1 = child under 6 in household, 0 = no child under 6 in household) are included. The varibles are recieved by recoding:
+
+```stata
+recode race (200=1) (else=0), gen(ethnie)
+recode educ (0/72=0) (73/90=1) (91/125=2), gen(bildung)
+recode yngch (0/5=1) (else=0), gen(kleinkind)
+```
+The probit regression is executed using:
+```stata
+probit emp benefit3 i.ethnie i.bildung i.kleinkind i.statefip i.year
+```
+The following command provides margins that can be interpreted properly:
+```stata
+margins, dydx(benefit3 ethnie bildung kleinkind) atmeans
+```
