@@ -114,3 +114,6 @@ The following command provides margins that can be interpreted properly:
 ```stata
 margins, dydx(benefit3 ethnie bildung kleinkind) atmeans
 ```
+The Probit-Regression yields:
+![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Results.png "Results")
+
