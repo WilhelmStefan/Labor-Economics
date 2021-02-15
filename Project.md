@@ -18,7 +18,7 @@ The findings of Meyer and Rosenbaum are consistent with other research. For exam
 ## Own Research
 Following the approach of Meyer and Rosenbaum this project investigates the effects of the newly introduced welfare program TANF between 2000 and 2010.
 ### Data
-In research project CPS data recieved from IPUMS (https://cps.ipums.org/cps/) is used. I work with monthly data from 2000 to 2010 including only single women between 19-44 years who are not currently visiting school or who are not able to work. The selection is based on the original paper. Further, I wanted to include the maximum TANF benefit into my analysis which is not included in the CPS data. Therefore, I retrived additional data from the *Welfare Rules Database* (https://wrd.urban.org/wrd/Query/query.cfm). The data includes the maximum TANF benefit by state depending on the size of the household for the observed time period. The data is then merged by an many-to-one merge command since one oberservation from the benefit data is matched with many observations from the CPS data. The data is merged using the variables state, number of children, year and month.
+In research project CPS data recieved from IPUMS (https://cps.ipums.org/cps/) is used. I work with monthly data from 2000 to 2010 including only single women between 19-44 years who are not currently visiting school or who are not able to work. The selection is based on the original paper. Further, I wanted to include the maximum TANF benefit into my analysis which is not included in the CPS data. Therefore, I retrived additional data from the Welfare Rules Database (https://wrd.urban.org/wrd/Query/query.cfm). The data includes the maximum TANF benefit by state depending on the size of the household for the observed time period. The data is then merged by an many-to-one merge command since one oberservation from the benefit data is matched with many observations from the CPS data. The data is merged using the variables state, number of children, year and month.
 
 Stata-Code:
 ```stata
@@ -49,6 +49,31 @@ In 1996 the welfare program investigated by the authors of the original paper wa
 |2010|-|
 |**Total**|1.087.308|
 
+### Hypotheses
+Based on the previous oberservations the following hypotheses are put up:
+***The employment rates of childless single women and single mothers will no longer converge but follow the same trend because the benefits are generalised***
+
+***Since benefits are decreasing employment in both groups will rise. The decreasing number of recipients is an indicator for this development***
+
+### Graphical analysis
+In order to confirm or reject the hypotheses a graphical analysis is conducted first. I created the variable emp(employed) which equals one if the observed women has been working positve hours last week. Moreover, the same variable is created for the subgroups of childless single women (empsingle) and single mothers (empmother). 
+```stata
+recode ahrsworkt (999=0) (else=1),gen(emp)
+```
+```stata
+gen empsingle=.
+replace empsingle = 0 if emp==0 & nchild == 0
+replace empsingle = 1 if emp==1 & nchild == 0
+```
+```stata
+gen empmother=.
+replace empmother = 0 if emp==0 & nchild > 0
+replace empmother = 1 if emp==1 & nchild > 0
+```
+Using stata delivers the shown bar diagrams:
+```stata
+graph bar empsingle empmother, over(year)
+```
 
 
 
