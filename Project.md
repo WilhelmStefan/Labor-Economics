@@ -26,6 +26,20 @@ In 1996 the welfare program investigated by the authors of the original paper wa
 
 **Average TANF Recipients:**
 
-![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/TANF%20Recipients.png "TANF Recipients")
+|Year|Average Number of Recipients|
+|:-------:|-------:|
+|2000|1.408.427|
+|2001|1.285.527|
+|2002|1.221.508|
+|2003|1.167.657|
+|2004|1.110.821|
+|2005|1.024.860|
+|2006|930.196|
+|2007|837.276|
+|2008|799.503|
+|2009|-|
+|2010|-|
+|**Total**|1.087.308|
+
 
 
