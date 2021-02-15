@@ -51,9 +51,10 @@ In 1996 the welfare program investigated by the authors of the original paper wa
 
 ### Hypotheses
 Based on the previous oberservations the following hypotheses are put up:
-***The employment rates of childless single women and single mothers will no longer converge but follow the same trend because the benefits are generalised***
 
-***Since benefits are decreasing employment in both groups will rise. The decreasing number of recipients is an indicator for this development***
+***"The employment rates of childless single women and single mothers will no longer converge but follow the same trend because the benefits are generalised."***
+
+***"Since benefits are decreasing employment in both groups will rise. The decreasing number of recipients is an indicator for this development."***
 
 ### Graphical analysis
 In order to confirm or reject the hypotheses a graphical analysis is conducted first. I created the variable emp(employed) which equals one if the observed women has been working positve hours last week. Moreover, the same variable is created for the subgroups of childless single women (empsingle) and single mothers (empmother). 
@@ -76,5 +77,19 @@ graph bar empsingle empmother, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Besch%C3%A4ftigung.png "Beschäftigung")
 
-
+Employment of black mothers:
+```stata
+graph bar empsingle empmother if race==200, over(year)
+```
+![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Afroamericans.png "Afroamericans")
+Employment of unskilled monthers (no high school degree):
+```stata
+graph bar empsingle empmother if educ<73, over(year)
+```
+![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Geringqualifiziert.png "Geringqualifiziert")
+Employment of monthers with children under 6 years:
+```stata
+graph bar empsingle empmother if yngch<6, over(year)
+```
+![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Kleinkind.png "Kleinkind")
 
