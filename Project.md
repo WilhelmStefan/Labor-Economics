@@ -17,6 +17,11 @@ The findings of Meyer and Rosenbaum are consistent with other research. For exam
 
 ## Own Research
 Following the approach of Meyer and Rosenbaum this project investigates the effects of the newly introduced welfare program TANF between 2000 and 2010.
+### Data
+In research project CPS data recieved from IPUMS (https://cps.ipums.org/cps/) is used. I work with monthly data from 2000 to 2010 including only single women between 19-44 years who are not currently visiting school or who are not able to work. The selection is based on the original paper. Further, I wanted to include the maximum TANF benefit into my analysis which is not included in the CPS data. Therefore, I retrived additional data from the *Welfare Rules Database* (https://wrd.urban.org/wrd/Query/query.cfm). The data includes the maximum TANF benefit by state depending on the size of the household for the observed time period. The data is then merged by an many-to-one merge command since one oberservation from the benefit data is matched with many observations from the CPS data. The data is merged using the variables state, number of children, year and month.
+```stata
+merge m:1 statefips year month nchild using benefitdata.dat
+```
 ### Context
 In 1996 the welfare program investigated by the authors of the original paper was replaced by a welfare program called TANF. Under TANF every state can freely choose the qualification criteria and amount of the welfare benfits. TANF is only granted consecutively for 2 years if the recipient does not work more than 30 hours a week. The lifetime limit for TANF benefits is set to 5 years. Moreover, also childless single women are eligible for TANF. It is striking that the TANF benefits in most states have not been adjusted during the observation time. This leads to a decrease in the average benefit when accounting for inflation. Another noticable observation is the continuous decline in TANF recipients. In 2008 the number of reciepients is almost halved compared to 2000.
 
@@ -40,6 +45,7 @@ In 1996 the welfare program investigated by the authors of the original paper wa
 |2009|-|
 |2010|-|
 |**Total**|1.087.308|
+
 
 
 
