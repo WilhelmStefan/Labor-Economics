@@ -71,25 +71,25 @@ gen empmother=.
 replace empmother = 0 if emp==0 & nchild > 0
 replace empmother = 1 if emp==1 & nchild > 0
 ```
-Using stata delivers the shown bar diagrams:
+**Using stata delivers the shown bar diagrams:**
 ```stata
 graph bar empsingle empmother, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Besch%C3%A4ftigung.png "Beschäftigung")
 
-Employment of black mothers:
+**Employment of black mothers:**
 ```stata
 graph bar empsingle empmother if race==200, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Afroamericans.png "Afroamericans")
 
-Employment of unskilled monthers (no high school degree):
+**Employment of unskilled monthers (no high school degree):**
 ```stata
 graph bar empsingle empmother if educ<73, over(year)
 ```
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Geringqualifiziert.png "Geringqualifiziert")
 
-Employment of monthers with children under 6 years:
+**Employment of monthers with children under 6 years:**
 ```stata
 graph bar empsingle empmother if yngch<6, over(year)
 ```
@@ -106,15 +106,15 @@ recode race (200=1) (else=0), gen(ethnie)
 recode educ (0/72=0) (73/90=1) (91/125=2), gen(bildung)
 recode yngch (0/5=1) (else=0), gen(kleinkind)
 ```
-The probit regression is executed using:
+**The probit regression is executed using:**
 ```stata
 probit emp benefit3 i.ethnie i.bildung i.kleinkind i.statefip i.year
 ```
-The following command provides margins that can be interpreted properly:
+**The following command provides margins that can be interpreted properly:**
 ```stata
 margins, dydx(benefit3 ethnie bildung kleinkind) atmeans
 ```
-The Probit-Regression yields:
+**The Probit-Regression yields:**
 ![alt_text](https://github.com/WilhelmStefan/Labor-Economics/blob/main/Results.png "Results")
 
 ### Results
