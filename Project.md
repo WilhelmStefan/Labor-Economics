@@ -19,8 +19,8 @@ The findings of Meyer and Rosenbaum are consistent with other research. For exam
 Following the approach of Meyer and Rosenbaum this project investigates the effects of the newly introduced welfare program TANF between 2000 and 2010.
 ### Data
 In research project CPS data recieved from IPUMS (https://cps.ipums.org/cps/) is used. I work with monthly data from 2000 to 2010 including only single women between 19-44 years who are not currently visiting school or who are not able to work. The selection is based on the original paper. Further, I wanted to include the maximum TANF benefit into my analysis which is not included in the CPS data. Therefore, I retrived additional data from the *Welfare Rules Database* (https://wrd.urban.org/wrd/Query/query.cfm). The data includes the maximum TANF benefit by state depending on the size of the household for the observed time period. The data is then merged by an many-to-one merge command since one oberservation from the benefit data is matched with many observations from the CPS data. The data is merged using the variables state, number of children, year and month.
-Stata-Code:
-```stata
+
+Stata-Code: ```stata
 merge m:1 statefip year month nchild using benefitdata.dat
 ```
 ### Context
